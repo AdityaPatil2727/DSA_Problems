@@ -1,0 +1,20 @@
+import java.util.HashSet;
+
+public static int removeDuplicates(int[] arr) {
+    if (arr == null || arr.length == 0) {
+        return 0;
+    }
+
+    HashSet<Integer> set = new HashSet<>();
+    int index = 0;
+
+    for (int value : arr) {
+        if (!set.contains(value)) {
+            set.add(value);
+            arr[index] = value;
+            index++;
+        }
+    }
+
+    return index; // new length
+}
